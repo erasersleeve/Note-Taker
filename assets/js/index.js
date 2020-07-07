@@ -26,9 +26,13 @@ const saveNote = (note) => {
 
 // A function for deleting a note from the db
 const deleteNote = (id) => {
+  var db = await readFile("db/db.json", "utf8");
+  var dbArray = JSON.parse(db);
+  console.log(dbArray);
   return $.ajax({
     url: "api/notes/" + id,
-    method: "DELETE",
+    data: dbArray,   
+    method: "DELETE"
   });
 };
 
