@@ -34,8 +34,15 @@ app.post("/api/notes", async function (req, res){
       
     var nNew = req.body;
     console.log(nNew);
-    nNew.id = nCount;
+    // nNew.id = nArray[nArray.length-1].id+1 || 1;
+    if (nArray.length == 0) {
+        nNew.id = 1
+    }
+    else {
+        nNew.id = nArray[nArray.length-1].id+1
+    };
     nArray.push(nNew);
+    //instead of using a blank array, fetch the JSON object.
     nCount++;
     await writeFile("db/db.json", JSON.stringify(nArray));
     return res.json(nNew);
@@ -45,18 +52,20 @@ app.post("/api/notes", async function (req, res){
 
 app.delete("/api/notes/:id", async function (req, res){
     var selector = req.params.id;
-    console.log(selector);
-    console.log(req.body);
-
+    console.log("This is the id we want to delete:", selector)
+    var lucky = nArray.filter(function(number) {
+        return parseInt(number["id"]) !== parseInt(selector);
+        });
+    writeFile("db/db.json", JSON.stringify(lucky));
+    return res.json(lucky); 
+    
 })
-
 
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
 
-// why do i need to use path.join for the sendfiles?  
 
 
 // Server listener
