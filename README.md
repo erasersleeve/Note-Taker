@@ -15,11 +15,11 @@
   To deployed app on heroku: https://polar-everglades-30981.herokuapp.com/
   To github repository: https://github.com/erasersleeve/Note-Taker
   ## Images
-  ![1](https://github.com/erasersleeve/Note-Taker/blob/master/Assets/images/1.png)
+  ![1](https://github.com/erasersleeve/Note-Taker/blob/master/assets/images/1.png)
 
-  ![2](https://github.com/erasersleeve/Note-Taker/blob/master/Assets/images/2.png)
+  ![2](https://github.com/erasersleeve/Note-Taker/blob/master/assets/images/2.png)
 
-  ![3](https://github.com/erasersleeve/Note-Taker/blob/master/Assets/images/3.png)
+  ![3](https://github.com/erasersleeve/Note-Taker/blob/master/assets/images/3.png)
 
   ## Installation
   To install necessary dependencies, run the following command:
