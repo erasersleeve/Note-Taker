@@ -68,6 +68,7 @@ const handleNoteSave = function () {
 // Delete the clicked note
 const handleNoteDelete = function (event) {
   // prevents the click listener for the list from being called when the button inside of it is clicked
+  //because the delete button hovers over the note, so clicking the delete will trigger both. stopProp will allow the delete to be clicked individually.
   event.stopPropagation();
 
   const note = $(this).parent(".list-group-item").data();
